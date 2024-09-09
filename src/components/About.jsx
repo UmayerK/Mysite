@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
@@ -7,8 +7,8 @@ import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ServiceCard = ({ index, title, icon }) => (
-  <Tilt className="xs:w-[250px] w-full">
+const ServiceCard = ({ index, title, icon, isMobile }) => (
+  <Tilt className="xs:w-[250px] w-full" tiltEnable={!isMobile}>
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
       className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
@@ -36,6 +36,24 @@ const ServiceCard = ({ index, title, icon }) => (
 );
 
 const About = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mobileQuery = window.matchMedia("(max-width: 500px)");
+
+    setIsMobile(mobileQuery.matches);
+
+    const handleMobileQueryChange = (event) => {
+      setIsMobile(event.matches);
+    };
+
+    mobileQuery.addEventListener("change", handleMobileQueryChange);
+
+    return () => {
+      mobileQuery.removeEventListener("change", handleMobileQueryChange);
+    };
+  }, []);
+
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -52,7 +70,7 @@ const About = () => {
 
       <div className="mt-20 flex flex-wrap gap-10">
         {services.map((service, index) => (
-          <ServiceCard key={service.title} index={index} {...service} />
+          <ServiceCard key={service.title} index={index} {...service} isMobile={isMobile} />
         ))}
       </div>
     </>
