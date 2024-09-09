@@ -23,8 +23,8 @@ const Computers = ({ isMobile, isTablet }) => {
       <primitive
         object={computer.scene}
         // Adjust scale: mobile (7.9), tablet (4.9), desktop (17.0)
-        scale={isMobile ? 79.9 : isTablet ? 1.9 : 17.0}
-        position={isMobile ? [-2, -1.5, 0] : [0, -2.5, 0]} // Adjust position for better alignment on mobile/tablet
+        scale={isMobile ? 7.9 : isTablet ? 13.9 : 17.0}
+        position={isMobile ? [0, -1.5, 0] : [0, -2.5, 0]} // Adjust position for better alignment on mobile/tablet
         rotation={[0, 40, 0]} // Adjust rotation for better alignment with the camera
       />
     </mesh>
