@@ -1,5 +1,5 @@
-import React, { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
+import React, { Suspense, useEffect, useState, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
@@ -7,9 +7,16 @@ import CanvasLoader from "../Loader";
 
 const Computers = ({ isMobile, isTablet }) => {
   const computer = useGLTF("./desktop_pc/scene.gltf", GLTFLoader);
+  const meshRef = useRef();
+
+  useFrame((state) => {
+    if (meshRef.current) {
+      meshRef.current.rotation.y = state.clock.getElapsedTime() * 0.5; // Adjust rotation speed here
+    }
+  });
 
   return (
-    <mesh>
+    <mesh ref={meshRef}>
       <hemisphereLight intensity={0.15} groundColor="black" />
       <spotLight
         position={[-20, 50, 10]}
@@ -22,10 +29,8 @@ const Computers = ({ isMobile, isTablet }) => {
       <pointLight intensity={2} />
       <primitive
         object={computer.scene}
-        // Adjust scale: mobile (7.9), tablet (4.9), desktop (17.0)
         scale={isMobile ? 7.9 : isTablet ? 13.9 : 17.0}
-        position={isMobile ? [0, -1.5, 0] : [0, -2.5, 0]} // Adjust position for better alignment on mobile/tablet
-        rotation={[0, 40, 0]} // Adjust rotation for better alignment with the camera
+        position={isMobile ? [0, -1.5, 0] : [0, -2.5, 0]}
       />
     </mesh>
   );
@@ -61,22 +66,23 @@ const ComputersCanvas = () => {
 
   return (
     <Canvas
-      frameloop="demand"
+      frameloop="always"
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
+      style={{ pointerEvents: isMobile ? 'none' : 'auto' }}
     >
       <Suspense fallback={<CanvasLoader />}>
-        <OrbitControls
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-          enableRotate={!isMobile} // Disable rotation on mobile
-        />
+        {!isMobile && (
+          <OrbitControls
+            enableZoom={false}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
+          />
+        )}
         <Computers isMobile={isMobile} isTablet={isTablet} />
       </Suspense>
-
       <Preload all />
     </Canvas>
   );
