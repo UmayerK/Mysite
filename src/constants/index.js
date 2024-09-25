@@ -174,28 +174,28 @@ const projects = [
       },
     ],
     image: reactandthreewp,
-    source_code_link: "https://umayer.ca",
+    source_code_link: "https://umayerk.github.io/RobsonsV1/",
   },
   {
-    name: "FSAE Formula Electric Race Car Display",
+    name: "Scrapify Ai Powered Web Scraper",
     description:
-        "Contributed to the development of a low-level program for a Formula Electric race car, converting assembly code to C code.",
+        "Scrapify is a web scraper that uses AI to scrape websites and return the data in a structured format allowing users to ask questions about the data and recieve answers",
       tags: [
       {
-        name: "c",
+        name: "Python",
         color: "blue-text-gradient",
       },
       {
-        name: "assembly",
+        name: "OpenAI api",
         color: "green-text-gradient",
       },
       {
-        name: "lowlevelprogramming",
+        name: "Selenium",
         color: "pink-text-gradient",
       },
     ],
     image: formulae,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/UmayerK/Pyscraper",
   },
  
 ];
