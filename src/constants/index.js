@@ -116,8 +116,8 @@ const experiences = [
     date: "April 2024 - Present",
     points: [
       " Led the development of a scalable backend distribution network using the MCP schema, handling thousands of orders daily and ensuring scalability with MongoDB for real-time order information.",
-      " Designed and implemented a seamless user interface with the MERN stack, significantly increasing user engagementthrough a streamlined and intuitive experience. The frontend was optimized for performance, leading to a 25% increase in user retention",
-      " Developed and deployed machine learning models using historical data and advanced Python libraries such as PyTorch,scikit-learn, TensorFlow, and pandas. These models were crucial for parsing large datasets, optimizing resource allocation, and improving predictive analytics, whic",
+      " Designed and implemented a seamless user interface with the MERN stack, significantly increasing user engagementthrough a streamlined and intuitive experience. The frontend was optimized for performance, leading to a 25% increase in user retention.",
+      " Developed and deployed machine learning models using historical data and advanced Python libraries such as PyTorch,scikit-learn, TensorFlow, and pandas. These models were crucial for parsing large datasets, optimizing resource allocation, while improving predictive analytics.",
     ],
   },
   {
@@ -156,9 +156,9 @@ const projects = [
     source_code_link: "https://github.com/UmayerK/Winhacks2024-umayer",
   },
   {
-    name: "Personal Portfolio Website",
+    name: "Robsons Bodyworks Automotive",
     description:
-      "Personal Portfolio Website made to showcase my progression as a software engineer you might just be looking at it right now ",
+      "This is a website for a local automotive repair shop, it is a static website that showcases their services and contact information",
     tags: [
       {
         name: "react",

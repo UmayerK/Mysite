@@ -1,6 +1,9 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
@@ -115,12 +118,25 @@ const Contact = () => {
             />
           </label>
 
-          <button
-            type="submit"
-            className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
-          >
-            {loading ? "Sending..." : "Send"}
-          </button>
+          <div className="flex items-center justify-between mt-8">
+            <button
+              type="submit"
+              className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
+            >
+              {loading ? "Sending..." : "Send"}
+            </button>
+            <div className="flex space-x-4">
+              <a href="https://github.com/UmayerK" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300">
+                <FontAwesomeIcon icon={faGithub} size="2x" />
+              </a>
+              <a href="https://www.linkedin.com/in/umayerk/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300">
+                <FontAwesomeIcon icon={faLinkedin} size="2x" />
+              </a>
+              <a href="mailto:umayer.k2004@gmail.com" className="text-white hover:text-gray-300">
+                <FontAwesomeIcon icon={faEnvelope} size="2x" />
+              </a>
+            </div>
+          </div>
         </form>
       </motion.div>
 
