@@ -1,6 +1,8 @@
 import React from "react";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 
 import { styles } from "../styles";
 import { github } from "../assets";
@@ -15,6 +17,7 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
+  is_live_site,
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
@@ -35,14 +38,22 @@ const ProjectCard = ({
 
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
             <div
-              onClick={() => window.open(source_code_link, "_blank")}
+              onClick={() => window.open(source_code_link, "_blank", "noopener,noreferrer")}
               className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
             >
-              <img
-                src={github}
-                alt="source code"
-                className="w-1/2 h-1/2 object-contain"
-              />
+              {is_live_site ? (
+                <FontAwesomeIcon
+                  icon={faArrowUpRightFromSquare}
+                  className="text-white w-1/2 h-1/2"
+                  title="Live site"
+                />
+              ) : (
+                <img
+                  src={github}
+                  alt="source code"
+                  className="w-1/2 h-1/2 object-contain"
+                />
+              )}
             </div>
           </div>
         </div>
@@ -80,9 +91,9 @@ const Works = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
-          These projects showscase my skills and experiences. Each project
-          describes my ability to problem solve and work with future
-          technologies.
+          A few things I've built recently, from security and developer
+          tooling to 3D web and machine learning. Each card links to the
+          source code or live site.
         </motion.p>
       </div>
 

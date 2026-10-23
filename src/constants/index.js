@@ -3,24 +3,24 @@ import {
   backend,
   web,
   javascript,
-  html,
-  css,
+  typescript,
   reactjs,
-  tailwind,
   nodejs2,
-  git,
   python,
-  energy1,
+  go,
+  rust,
+  pytorch,
+  opencv,
+  docker,
+  aws,
   ai1,
   webdev1,
-  security1,
   brain,
-  threejswp,
-  reactandthreewp,
-  threejs2,
-  vuejs,
-  firebase,
-  formulae,
+  zerovault,
+  clankercode,
+  swipr,
+  steamanalysis,
+  amazondeals,
 } from "../assets";
 
 export const navLinks = [
@@ -40,164 +40,142 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
-    displayTitle: "Web Developer",
+    title: "ML / Computer Vision Engineer",
+    icon: brain,
+  },
+  {
+    title: "Full-Stack Developer",
     icon: web,
   },
   {
-    title: "Open Source Developer",
-    displayTitle: "Software Engineer", 
-    icon: mobile,
-  },
-  {
-    title: "Backend Developer",
-    displayTitle: "Backend Developer",
+    title: "Backend Engineer",
     icon: backend,
   },
   {
-    title: "AI / Machine Learning Developer",
-    displayTitle: "AI / Machine Learning Developer",
-    icon: brain,
+    title: "Mobile Developer",
+    icon: mobile,
   },
 ];
 
 const technologies = [
-  {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
-  {
-    name: "React JS",
-    icon: reactjs,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "nodejs2",
-    icon: nodejs2,
-  },
-  {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "python",
-    icon: python,
-  },
-  {
-    name: "threejs2",
-    icon: threejs2,
-  },
-  {
-    name: "firebase",
-    icon: firebase,
-  },
-  {
-    name: "vuejs",
-    icon: vuejs,
-  },
+  { name: "Python", icon: python },
+  { name: "TypeScript", icon: typescript },
+  { name: "JavaScript", icon: javascript },
+  { name: "Go", icon: go },
+  { name: "Rust", icon: rust },
+  { name: "PyTorch", icon: pytorch },
+  { name: "OpenCV", icon: opencv },
+  { name: "React", icon: reactjs },
+  { name: "Node.js", icon: nodejs2 },
+  { name: "Docker", icon: docker },
+  { name: "AWS", icon: aws },
 ];
 
 const experiences = [
   {
-    title: "Software Enginner Intern",
-    icon: webdev1,
+    title: "Machine Learning Research Assistant",
+    company_name: "Center of Diagnostic Imaging Research (CDIR) · Windsor, ON",
+    icon: ai1,
     iconBg: "#383E56",
-    date: "April 2024 - Present",
+    date: "Sep 2026 - Present",
     points: [
-      " Led the development of a scalable backend distribution network using the MCP schema, handling thousands of orders daily and ensuring scalability with MongoDB for real-time order information.",
-      " Designed and implemented a seamless user interface with the MERN stack, significantly increasing user engagementthrough a streamlined and intuitive experience. The frontend was optimized for performance, leading to a 25% increase in user retention.",
-      " Developed and deployed machine learning models using historical data and advanced Python libraries such as PyTorch,scikit-learn, TensorFlow, and pandas. These models were crucial for parsing large datasets, optimizing resource allocation, while improving predictive analytics.",
+      "Developing an AI-driven, fully automated process monitoring system for dissimilar-material resistance spot riveted joints.",
+      "Collecting process data from RIWA riveting machines and labelling it to build machine learning and computer vision training datasets.",
+      "Training deep learning models in Python with PyTorch and OpenCV to detect welds, and visualizing results with Matplotlib and SciPy.",
+      "Building models that classify weld quality as good or bad and generate an automated quality analysis report for each joint.",
     ],
   },
   {
-    title: "Freelance Web Developer",
-    icon: ai1,
+    title: "Founding Engineer",
+    company_name: "YAP Technologies Inc. · Remote",
+    icon: mobile,
     iconBg: "#383E56",
-    date: " Dec 2023 - Present",
+    date: "Aug 2025 - Mar 2026",
     points: [
-      "Developed responsive and user-friendly websites using modern frameworks like React and Vue.js, ensuring cross-browser compatibility and optimal performance.",
-      "Implemented custom e-commerce solutions with secure payment gateways, enhancing online sales capabilities for small businesses.",
-      "Collaborated with designers to create visually appealing and intuitive user interfaces, improving overall user experience and engagement metrics.",
+      "Built a real-time voice pipeline integrating Azure Speech, OpenAI, ElevenLabs and LiveKit with replies under 300ms.",
+      "Shipped the iOS/Android app in React Native and TypeScript on a Node.js backend, reaching 3.5k users across 5 languages.",
+      "Delivered same-day over-the-air bug fixes serving 100+ concurrent users.",
+      "Set up CI/CD with GitHub Actions and Docker, plus Vitest, Playwright and Sentry, holding 99.9% uptime.",
+    ],
+  },
+  {
+    title: "Software Engineer Intern (Co-op)",
+    company_name: "Vista (Cimpress) · Remote",
+    icon: webdev1,
+    iconBg: "#383E56",
+    date: "Apr 2024 - Jun 2026",
+    points: [
+      "Built a domain-specific language and compiler with ANTLR to automate print template management, cutting design tickets by 60%.",
+      "Shipped a REST API and live renderer over JSON/HTTP that let 30+ non-technical staff edit templates without a developer.",
+      "Built Radius, a FastAPI marketplace where plants bid on print orders in timed rounds, plus the AI agent that bids to fill press runs.",
+      "Tuned the ML agent's decisions over 40+ features in scikit-learn (inventory, location, eco practices), cutting ops time by 25%.",
+      "Deployed services on AWS ECS Fargate (Docker, CloudWatch), gating GitHub Actions releases with Pytest to cut failed deploys by 15%.",
     ],
   },
 ];
 
 const projects = [
   {
-    name: "Safebook Anti Scam AI",
+    name: "ZeroVault",
     description:
-      "Safebook Anti Scam AI is a web app that uses AI to detect and prevent scams in real time allowing users to input a message and recieve a likelihood of it being a scam",
+      "Zero-knowledge, end-to-end encrypted password manager. Argon2id + AES-256-GCM run client-side so the server never sees plaintext. Web app, browser extension and Rust (Tauri) desktop clients share one TypeScript core on a Go API, with 500+ tests.",
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "python",
-        color: "green-text-gradient",
-      },
-      {
-        name: "fastapi",
-        color: "pink-text-gradient",
-      },
+      { name: "typescript", color: "blue-text-gradient" },
+      { name: "go", color: "green-text-gradient" },
+      { name: "rust-tauri", color: "pink-text-gradient" },
     ],
-    image: threejswp,
-    source_code_link: "https://github.com/UmayerK/Winhacks2024-umayer",
+    image: zerovault,
+    source_code_link: "https://zerovault-teal.vercel.app",
+    is_live_site: true,
   },
   {
-    name: "Robsons Bodyworks Automotive",
+    name: "Clanker Code",
     description:
-      "This is a website for a local automotive repair shop, it is a static website that showcases their services and contact information",
+      "Open-source CLI (on npm as clanker-code) that configures any repo for AI coding assistants like Claude Code: 26 commands, 46 skills, curated agents, MCPs and hooks. Tested on a 9-way GitHub Actions matrix (Node 18/20/22 x Linux/macOS/Windows), with a merge engine that preserves your edits.",
     tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "green-text-gradient",
-      },
-      {
-        name: "3js",
-        color: "pink-text-gradient",
-      },
+      { name: "typescript", color: "blue-text-gradient" },
+      { name: "nodejs", color: "green-text-gradient" },
+      { name: "cli", color: "pink-text-gradient" },
     ],
-    image: reactandthreewp,
-    source_code_link: "https://umayerk.github.io/RobsonsV1/",
+    image: clankercode,
+    source_code_link: "https://github.com/UmayerK/clanker-code",
   },
   {
-    name: "Scrapify Ai Powered Web Scraper",
+    name: "Swipr",
     description:
-        "Scrapify is a web scraper that uses AI to scrape websites and return the data in a structured format allowing users to ask questions about the data and recieve answers",
-      tags: [
-      {
-        name: "Python",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "OpenAI api",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Selenium",
-        color: "pink-text-gradient",
-      },
+      "Landing page for a 'Tinder for jobs' app: a React + three.js (React Three Fiber) hero of fanned 3D job cards, GSAP/Lenis scrolling and a Framer Motion swipe-to-apply demo.",
+    tags: [
+      { name: "react", color: "blue-text-gradient" },
+      { name: "threejs", color: "green-text-gradient" },
+      { name: "gsap", color: "pink-text-gradient" },
     ],
-    image: formulae,
-    source_code_link: "https://github.com/UmayerK/Pyscraper",
+    image: swipr,
+    source_code_link: "https://github.com/UmayerK/swipr",
   },
- 
+  {
+    name: "Steam Sentiment Analyzer",
+    description:
+      "Next.js 15 + TypeScript app that analyzes the sentiment of Steam game reviews using NLP (Sentiment.js) and the Steam API.",
+    tags: [
+      { name: "nextjs", color: "blue-text-gradient" },
+      { name: "typescript", color: "green-text-gradient" },
+      { name: "nlp", color: "pink-text-gradient" },
+    ],
+    image: steamanalysis,
+    source_code_link: "https://github.com/UmayerK/steam-analysis",
+  },
+  {
+    name: "Amazon Deal Evaluator",
+    description:
+      "Flask + Plotly dashboard that scores Amazon deals by comparing the actual discount to the discount predicted by a scikit-learn HistGradientBoostingRegressor trained on a 2.1M-product dataset.",
+    tags: [
+      { name: "python", color: "blue-text-gradient" },
+      { name: "flask", color: "green-text-gradient" },
+      { name: "scikit-learn", color: "pink-text-gradient" },
+    ],
+    image: amazondeals,
+    source_code_link: "https://github.com/UmayerK/AmazonMLAnalysis",
+  },
 ];
 
 export { services, technologies, experiences, projects };

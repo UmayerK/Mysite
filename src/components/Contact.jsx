@@ -129,7 +129,7 @@ const Contact = () => {
               <a href="https://github.com/UmayerK" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300">
                 <FontAwesomeIcon icon={faGithub} size="2x" />
               </a>
-              <a href="https://www.linkedin.com/in/umayerk/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300">
+              <a href="https://www.linkedin.com/in/umayer-khan" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-300">
                 <FontAwesomeIcon icon={faLinkedin} size="2x" />
               </a>
               <a href="mailto:umayer.k2004@gmail.com" className="text-white hover:text-gray-300">

@@ -23,7 +23,7 @@ const ServiceCard = ({ index, title, icon, isMobile }) => (
       >
         <img
           src={icon}
-          alt="web-development"
+          alt={title}
           className="w-16 h-16 object-contain"
         />
 
@@ -65,7 +65,13 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        Currently a student at the University of Windsor studying Computer Science.I specialize in full stack development and Machine Learning.
+        I'm a Computer Science graduate from the University of Windsor (B.Sc.
+        Honours, Co-op). I'm currently a Machine Learning Research Assistant at
+        the Center of Diagnostic Imaging Research (CDIR), where I work on
+        computer vision for weld quality inspection. Before that, I shipped
+        production software as a Software Engineer Intern at Vista (Cimpress)
+        and as a Founding Engineer at YAP Technologies. I'm open to new-grad
+        software and ML engineering roles.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">

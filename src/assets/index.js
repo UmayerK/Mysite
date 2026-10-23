@@ -7,8 +7,6 @@ import menu from "./menu.svg";
 import close from "./close.svg";
 import brain from "./brain.png";
 import formulae from "./formulae.png"; // Corrected import path for formulae
-import vuejs from "./tech/vuejs.png";
-import firebase from "./tech/firebase.png";
 import nodejs2 from "./tech/nodejs2.png";
 import threejs2 from "./tech/threejs2.png";
 import css from "./tech/css.png";
@@ -20,6 +18,18 @@ import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 import python from "./tech/python.png";
+import go from "./tech/go.png";
+import rust from "./tech/rust.png";
+import pytorch from "./tech/pytorch.png";
+import opencv from "./tech/opencv.png";
+import docker from "./tech/docker.png";
+import aws from "./tech/aws.png";
+
+import zerovault from "./projects/zerovault.png";
+import clankercode from "./projects/clanker-code.png";
+import swipr from "./projects/swipr.png";
+import steamanalysis from "./projects/steam-analysis.png";
+import amazondeals from "./projects/amazon-deal-evaluator.png";
 
 import security1 from "./company/security.png";
 import energy1 from "./company/energy1.png";
@@ -38,9 +48,7 @@ export {
   github,
   menu,
   close,
-  vuejs,
   brain,
-  firebase,
   css,
   git,
   html,
@@ -58,4 +66,15 @@ export {
   webdev1,
   threejswp,
   reactandthreewp,
+  go,
+  rust,
+  pytorch,
+  opencv,
+  docker,
+  aws,
+  zerovault,
+  clankercode,
+  swipr,
+  steamanalysis,
+  amazondeals,
 };
