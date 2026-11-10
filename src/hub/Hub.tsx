@@ -486,7 +486,7 @@ export default function Hub() {
             About
           </p>
           <h2 className="hb-h2" data-reveal>
-            The work <em>behind</em> the miniatures.
+            The work <em>behind</em> the simulations.
           </h2>
           <div className="hb-about__grid">
             <div className="hb-bio" data-reveal>

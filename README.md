@@ -1,4 +1,4 @@
-# Umayer Khan — Five Working Miniatures
+# Umayer Khan — Portfolio Simulation
 
 A portfolio made of five interactive pieces, each a playable miniature of real work, plus a hub that links them.
 
