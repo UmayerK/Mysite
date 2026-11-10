@@ -72,8 +72,8 @@ const WORK: { when: string; where: string; role: string; what: string; pieces: s
   {
     when: 'UWindsor',
     where: 'Odette Debate Team',
-    role: 'Member',
-    what: 'Part of the Odette Debate Team at the University of Windsor.',
+    role: 'Debater and Judge',
+    what: 'Competed on the Odette Debate Team at the University of Windsor and also judged debates.',
     pieces: [],
   },
   {
