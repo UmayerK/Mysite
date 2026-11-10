@@ -1,1 +1,7 @@
 node_modules
+dist
+.vercel
+.shots
+*.local
+.DS_Store
+*.pdf

@@ -1,0 +1,73 @@
+.curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: none;
+  visibility: hidden;
+}
+.curtain[data-phase='in'],
+.curtain[data-phase='covered'],
+.curtain[data-phase='out'] {
+  visibility: visible;
+}
+.curtain[data-phase='in'],
+.curtain[data-phase='covered'] {
+  pointer-events: auto;
+}
+.curtain__panel {
+  position: absolute;
+  inset: 0;
+  background: var(--c-bg);
+  color: var(--c-fg);
+  display: grid;
+  place-items: center;
+  will-change: clip-path;
+}
+.curtain__label {
+  display: flex;
+  align-items: baseline;
+  gap: clamp(12px, 2vw, 28px);
+  padding: 0 24px;
+}
+.curtain__clip {
+  display: block;
+  overflow: hidden;
+  padding-block: 0.08em;
+}
+.curtain__index,
+.curtain__title {
+  display: block;
+  will-change: transform;
+}
+.curtain__index {
+  font: 500 clamp(11px, 1vw, 13px) / 1 var(--font-mono);
+  letter-spacing: 0.14em;
+  opacity: 0.6;
+}
+.curtain__title {
+  font: 400 clamp(44px, 9vw, 128px) / 1 var(--font-serif);
+  letter-spacing: -0.02em;
+}
+.curtain__bar {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background: var(--c-fg);
+  opacity: 0;
+  transform-origin: left;
+}
+/* Only show progress if the destination is slow to arrive. */
+.curtain[data-phase='covered'] .curtain__bar {
+  animation: curtain-bar 1.6s cubic-bezier(0.65, 0, 0.35, 1) 0.9s infinite;
+}
+@keyframes curtain-bar {
+  0% { opacity: 0.5; transform: scaleX(0); transform-origin: left; }
+  50% { opacity: 0.5; transform: scaleX(1); transform-origin: left; }
+  50.01% { transform-origin: right; }
+  100% { opacity: 0.5; transform: scaleX(0); transform-origin: right; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .curtain__bar { animation: none !important; }
+}
